@@ -1,7 +1,7 @@
 #' A function to scrape Wahlrecht.de
 #' 
 #' germanpolls() is a function that gets polling data from [Wahlrecht.de](http://www.wahlrecht.de) for seven polling organisations and ten parties.
-#' @importFrom dplyr %>%
+#' @importFrom magrittr %>%
 #' @importFrom rvest html_table
 #' @importFrom xml2 read_html
 #' @importFrom dplyr filter
