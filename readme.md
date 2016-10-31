@@ -5,8 +5,11 @@
 ## Usage
 
 `library(devtools)`
+
 `install_github("cutterkom/germanpolls")`
+
 `library(germanpolls)`
+
 `polling_data <- germanpolls()`
 
 ## What you get
