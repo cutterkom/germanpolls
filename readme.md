@@ -14,7 +14,7 @@
 
 ## What you get
 
-You get a dataframe with the following variables: 
+You get a dataframe with the following variables on the *federal level*: 
 
 - institute
 - date
@@ -36,5 +36,5 @@ Glimpse:
 
 ## Better Polls
 
-Germanpolls is a side-product of [gen-better-polls](https://github.com/sueddeutsche/gen-better-polls). At the GEN Hackathon at [Süddeutsche Zeitung](http://www.sz.de) we were working on a better way to visualize polling data. 
+Germanpolls is a byproduct of [gen-better-polls](https://github.com/sueddeutsche/gen-better-polls). At the GEN Hackathon at [Süddeutsche Zeitung](http://www.sz.de) we were working on a better way to visualize polling data. 
 
