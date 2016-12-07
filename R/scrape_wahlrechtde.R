@@ -89,8 +89,6 @@
   df %<>% as.data.frame()
   df <- filter(df, !is.na(df$befragte))
 
-  write.csv(df, file="data/data-input.csv", row.names = F, quote = F)
-
   # transform data set to longform
   df_l <- df %>% gather(partei, anteil, -institut, -datum, -befragte, -zeitraum, -typ)
   df_l$anteil <- df_l$anteil/100
