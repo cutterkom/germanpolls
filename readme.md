@@ -12,6 +12,35 @@
 
 `polling_data <- germanpolls()`
 
+## Result
+
+## Available data:
+
+You *can* get polling data for:
+
+de,Deutschland
+
+- he,Hessen
+- by,Bayern
+- hb,Bremen
+- ni,Niedersachsen
+- sn,Sachsen
+- th,Thüringen
+
+You *can not* get polling data for:
+
+- eu, European Union
+- be,Berlin
+- bb,Brandenburg
+- bw,Baden-Württemberg
+- hh,Hamburg
+- mv,Mecklenburg-Vorpommern
+- nw,Nordrhein-Westfalen
+- rp,Rheinland-Pfalz
+- sh,Schleswig-Holstein
+- sl,Saarland
+- st,Sachsen-Anhalt
+
 ## What you get
 
 You get a dataframe with the following variables on the *federal level*: 
@@ -36,5 +65,11 @@ Glimpse:
 
 ## Better Polls
 
-Germanpolls is a byproduct of [gen-better-polls](https://github.com/sueddeutsche/gen-better-polls). At the GEN Hackathon at [Süddeutsche Zeitung](http://www.sz.de) we were working on a better way to visualize polling data. 
+Germanpolls is a byproduct of [gen-better-polls](https://github.com/sueddeutsche/gen-better-polls). At the GEN Hackathon at [Süddeutsche Zeitung](http://www.sz.de) we were working on a better way to visualize polling data.
+
+## To Do
+
+* Rename variables
+* Package documentation
+
 
