@@ -10,24 +10,25 @@
 
 `library(germanpolls)`
 
-`polling_data <- germanpolls()`
+`polling_data <- germanpolls(region = "de")`
 
 ## Result
 
-## Available data:
+## Available data
 
-You *can* get polling data for:
+Call data for regions with `germanpolls(region = "de")` for Germany or `region = by` for Bavaria.
 
-de,Deutschland
+You **can** get polling data for:
 
-- he,Hessen
+- de,Deutschland
 - by,Bayern
+- he,Hessen
 - hb,Bremen
 - ni,Niedersachsen
 - sn,Sachsen
 - th,Thüringen
 
-You *can not* get polling data for:
+You **can not** get polling data for:
 
 - eu, European Union
 - be,Berlin
@@ -42,6 +43,8 @@ You *can not* get polling data for:
 - st,Sachsen-Anhalt
 
 ## What you get
+
+** Caution! old version**
 
 You get a dataframe with the following variables on the *federal level*: 
 
