@@ -3,7 +3,7 @@ Title: German Polling Data
 Version: 0.2
 Authors@R: person("Katharina", "Brunner", email = "mail@katharina-brunner.de", role = c("aut", "cre"))
 Description: Scrapes political polling data from Wahlrecht.de.  
-Depends: R (>= 3.3.1)
+Depends: R (>= 3.3)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -11,7 +11,7 @@ Imports:
   magrittr,
 	dplyr,
 	purrr,
-	rvest,
-	tidyr,
-	XML
+	XML,
+	xml2,
+	RCurl
 RoxygenNote: 6.1.1

@@ -1,7 +1,23 @@
-# Get data für Bundesländer
+#' Get data of Bundesländer
+#'
+#' Function to get data from states.
+#' @param url url of XML file, auto-generated from `region`
+#' @return data frame
+#' @importFrom xml2 read_xml
+#' @importFrom xml2 xml_find_all
+#' @importFrom xml2 xml_children
+#' @importFrom xml2 xml_name
+#' @importFrom xml2 xml_text
+#' @importFrom magrittr %>%
+#' @importFrom purrr map_dfc
+#' @importFrom purrr map
+#' @importFrom dplyr mutate
+#' @importFrom dplyr select
+#' @importFrom dplyr data_frame
+#' @export
 
 get_data_from_xml_laender <- function(url) {
-
+  
   ## find polls in XML file
   xml <- xml2::read_xml(url)
   rows <- xml %>% xml_find_all("//umfragen/*")

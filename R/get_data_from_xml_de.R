@@ -1,4 +1,21 @@
-# Get data für Deutschland
+#' Get data of Germany
+#'
+#' Function to get data from German wide polls: http://www.wahlrecht.de/umfragen/bundesweite.xml
+#' @return dataframe
+#' @importFrom xml2 read_xml
+#' @importFrom xml2 xml_find_all
+#' @importFrom xml2 xml_children
+#' @importFrom xml2 xml_name
+#' @importFrom xml2 xml_text
+#' @importFrom magrittr %>%
+#' @importFrom purrr map_dfc
+#' @importFrom purrr map
+#' @importFrom dplyr mutate
+#' @importFrom dplyr select
+#' @importFrom dplyr data_frame
+#' @export
+
+
 
 get_data_from_xml_de <- function() {
   

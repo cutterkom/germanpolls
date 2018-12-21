@@ -1,40 +1,17 @@
-# implement:
-# parteien: übersetzung?
-# germanpolls_latest(): nur der letzte 
-
-
-# mv,Mecklenburg-Vorpommern
-# be,Berlin
-# he,Hessen
-# ni,Niedersachsen
-# nw,Nordrhein-Westfalen
-# rp,Rheinland-Pfalz
-# sl,Saarland
-# hb,Bremen
-# hh,Hamburg
-# sn,Sachsen
-# st,Sachsen-Anhalt
-# sh,Schleswig-Holstein
-# th,Thüringen
-# by,Berlin
-# bw,Baden-Württemberg
-# bb,Brandenburg
-
-
-## wrapper function 
-
-source("R/get_data_from_xml_de.R")
-source("R/get_data_from_xml_laender.R")
-
-regions <- read.csv("data/regions.csv")
+#' Get data of German polls from wahlrecht.de. 
+#'
+#' This is the main function to parse XML files from Wahlrecht.de to extract polling data. 
+#' It catches all XML elements that can be found.
+#' Not all regions have XML available, their data can't be accessed with this function.
+#' @param region string, all available regions are documented in the readme
+#' @return dataframe
+#' @examples
+#' germanpolls(region = "de")
+#' germanpolls(region = "by")
+#' @importFrom RCurl url.exists
+#' @export
 
 germanpolls <- function(region = "de") {
-
-  library(purrr)
-  library(dplyr)
-  library(XML)
-  library(xml2)
-  library(RCurl)
   
   if(region == "de") {
     df <- get_data_from_xml_de()

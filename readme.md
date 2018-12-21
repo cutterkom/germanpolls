@@ -1,18 +1,20 @@
-# R package germanpolls
+# germanpolls - an R package for German polling data
 
 `germanpolls` is an R package for scraping [Wahlrecht.de](http://www.wahlrecht.de), a German website with the most comprehensive collection of polling results. 
 
-## Usage
+## Install 
 
-`library(devtools)`
+`devtools::install_github("cutterkom/germanpolls")`
 
-`install_github("cutterkom/germanpolls")`
+## Usage 
 
 `library(germanpolls)`
 
 `polling_data <- germanpolls(region = "de")`
 
 ## Result
+
+You get all elements from `XML` files in a dataframe.
 
 ## Available data
 
@@ -28,7 +30,7 @@ You **can** get polling data for:
 - sn,Sachsen
 - th,Thüringen
 
-You **can not** get polling data for:
+You **can't** get polling data for:
 
 - eu, European Union
 - be,Berlin
@@ -63,7 +65,6 @@ Germanpolls is a byproduct of [gen-better-polls](https://github.com/sueddeutsche
 
 ## To Do
 
-* Rename variables
-* Package documentation
-
-
+* Rename variables (parties etc)
+* `germanpolls_latest()`: get only the last poll
+* Submit to CRAN
