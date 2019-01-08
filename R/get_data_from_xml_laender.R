@@ -35,4 +35,7 @@ get_data_from_xml_laender <- function(url) {
     df_rows %>% 
       mutate(!!i := node %>% map(~ xml_find_all(., paste0(".//", i))) %>% map(~ xml_text(.)))
   }) %>% select(vars, -werte)
+  
+  return(df)
+
 }

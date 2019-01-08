@@ -1,6 +1,6 @@
 # germanpolls - an R package for German polling data
 
-`germanpolls` is an R package for scraping [Wahlrecht.de](http://www.wahlrecht.de), a German website with the most comprehensive collection of polling results. 
+`germanpolls` is an R package for scraping [Wahlrecht.de](http://www.wahlrecht.de), a German website with the most comprehensive collection of polling results.
 
 ## Install 
 
@@ -18,7 +18,7 @@ You get all elements from `XML` files in a dataframe.
 
 ## Available data
 
-Call data for regions with `germanpolls(region = "de")` for Germany or `region = by` for Bavaria.
+Call data for regions with `germanpolls(region = "de")` for Germany or `region = "by"` for Bavaria.
 
 You **can** get polling data for:
 
@@ -66,5 +66,6 @@ Germanpolls is a byproduct of [gen-better-polls](https://github.com/sueddeutsche
 ## To Do
 
 * Rename variables (parties etc)
+* Document all Variables
 * `germanpolls_latest()`: get only the last poll
 * Submit to CRAN

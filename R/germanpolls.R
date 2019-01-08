@@ -19,8 +19,9 @@ germanpolls <- function(region = "de") {
     print("No XML yet, please go to http://www.wahlrecht.de/umfragen/europawahl.htm")
   } else {
     url <- paste0("http://www.wahlrecht.de/umfragen/xml/land_", region, ".xml")
-    if(url.exists(url) == TRUE) {
+    if(RCurl::url.exists(url) == TRUE) {
       df <- get_data_from_xml_laender(url)
     } else(print("No XML, sorry"))
   }
 }
+
