@@ -12,5 +12,8 @@ Imports:
 	dplyr,
 	purrr,
 	xml2,
-	RCurl
-RoxygenNote: 6.1.1
+	RCurl,
+	readr
+RoxygenNote: 7.1.0
+Suggests: 
+    testthat (>= 2.1.0)

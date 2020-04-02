@@ -7,35 +7,24 @@
 #' @importFrom xml2 xml_find_all
 #' @importFrom xml2 xml_children
 #' @importFrom xml2 xml_name
+#' @importFrom xml2 xml_attrs
 #' @importFrom xml2 xml_text
 #' @importFrom magrittr %>%
-#' @importFrom purrr map_dfc
+#' @importFrom purrr set_names
+#' @importFrom purrr flatten
 #' @importFrom purrr map
-#' @importFrom dplyr mutate
-#' @importFrom dplyr select
-#' @importFrom dplyr data_frame
+#' @importFrom purrr map_df
+#' @importFrom readr type_convert
 #' @export
 
 get_data_from_xml_laender <- function(url) {
-  
-  ## find polls in XML file
-  xml <- xml2::read_xml(url)
-  rows <- xml %>% xml_find_all("//umfragen/*")
-  
-  ## find variables
-  meta <-  rows %>% xml_children() %>% xml_name() %>% unique()
-  parties <- xml %>% xml_find_all("//umfragen/*/werte") %>% xml_children() %>% xml_name() %>% unique()
-  vars <- c(meta, parties)
-  
-  ## helper data frame
-  df_rows <- data_frame(row = seq_along(rows), node = rows)
-  
-  ## find features in each row/poll
-  df <- map_dfc(vars, function(i){
-    df_rows %>% 
-      mutate(!!i := node %>% map(~ xml_find_all(., paste0(".//", i))) %>% map(~ xml_text(.)))
-  }) %>% select(vars, -werte)
+  df <- xml2::read_xml(url) %>% 
+    xml2::xml_find_all("//umfragen/*") %>% 
+    purrr::map_df(~purrr::flatten(c(xml2::xml_attrs(.x), 
+                                    purrr::map(xml2::xml_children(.x), 
+                                               ~purrr::set_names(as.list(xml2::xml_text(.x)), xml2::xml_name(.x)))))) %>%
+    
+    type_convert()
   
   return(df)
-
 }
